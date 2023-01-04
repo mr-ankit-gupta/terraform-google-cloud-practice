@@ -21,3 +21,8 @@ resource "google_storage_bucket" "my-bckt" {
   location = "US-CENTRAL1"
   uniform_bucket_level_access = true
 }
+resource "google_storage_bucket_object" "picture" {
+  name = "girrafe_pic"
+  bucket = google_storage_bucket.my-bckt.name
+  source = "girrafe.jpg"
+}
